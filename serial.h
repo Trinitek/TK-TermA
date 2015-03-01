@@ -1,0 +1,2 @@
+
+void initSerial(void);

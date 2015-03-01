@@ -1,4 +1,6 @@
 
+#include <xc.h>
+
 void initSerial(void) {
     // setup transmission
     TXSTAbits.TX9 = 0;          // 8-bit transmission
@@ -17,4 +19,8 @@ void initSerial(void) {
     BAUDCONbits.ABDEN = 0;      // disable baud detect
     SPBRG1 = 51;                // 2400 baud at 8 MHz
     SPBRGH1 = 0;
+}
+
+void initPS2(void) {
+    //
 }

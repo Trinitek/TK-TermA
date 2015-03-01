@@ -1,4 +1,6 @@
 
+#include <xc.h>
+
 void initOscillator(void) {
     OSCCONbits.IRCF = 0b110;    // 8 MHz
 }
@@ -10,4 +12,6 @@ void initPorts(void) {
     ANSELC = 0;
     ANSELD = 0;
     ANSELE = 0;
+
+    TRISA = 0;
 }
