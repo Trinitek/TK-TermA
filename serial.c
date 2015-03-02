@@ -65,7 +65,3 @@ char getSerial(void) {
     if (PIR1bits.RC1IF) return RCREG;
     else return 0;
 }
-
-void initPS2(void) {
-    //
-}
