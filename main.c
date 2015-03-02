@@ -11,6 +11,9 @@ void main(void) {
     initSerial();
     initLcd();
 
+    //char hello[] = "Hello world!";
+    //print(hello);
+
     while (true) {
         //
     }
