@@ -86,7 +86,7 @@ void initLcd(void) {
         writeNibbleLcd(CTRL, 0b00000011);
     }
 
-    writeNibbleLcd(CTRL, 0b00000010);   // set to 4-bit operation
+    //writeNibbleLcd(CTRL, 0b00000010);   // set to 4-bit operation
 
     writeLcd(CTRL, 0b00101000);     // 4-bit, 2 lines, 5x8 font
     writeLcd(CTRL, 0b00001111);     // display on, underline cursor, block cursor
