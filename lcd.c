@@ -24,21 +24,14 @@
 #define DB5         LATAbits.LATA1
 #define DB4         LATAbits.LATA0
 
-#define CTRL        0
-#define DATA        1
-
 /**
- * Write a null terminated string array to the LCD.
+ * Write a null terminated string to the LCD
  * @param string
  */
 void print(char string[]) {
     int i = 0;
-    char c;
-
-    while (true) {
-        c = string[i];
-        if (!c) break;
-        writeLcd(DATA, c);
+    while(string[i] != 0) {
+        writeLcd(DATA, string[i]);
         i++;
     }
 }
@@ -55,15 +48,14 @@ void writeNibbleLcd(bool reg, char data) {
     Enable = 1;
     waitLcd();
     Enable = 0;
-    waitLcd();
+    //waitLcd();
 }
 
 void writeLcd(bool reg, char data) {
     RegSelect = reg;
     RWSelect = 0;
-    char temp = data >> 4;
 
-    writeNibbleLcd(reg, temp);      // most significant nibble first
+    writeNibbleLcd(reg, data >> 4); // most significant nibble first
     writeNibbleLcd(reg, data);      // least significant nibble last
 }
 
@@ -92,5 +84,5 @@ void initLcd(void) {
     writeLcd(CTRL, 0b00001111);     // display on, underline cursor, block cursor
     writeLcd(CTRL, 0b00000001);     // clear display
     writeLcd(CTRL, 0b00000110);     // address counter increments, no display shift
-    writeLcd(DATA, 'W');
+    //writeLcd(DATA, 'W');
 }

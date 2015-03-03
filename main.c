@@ -11,9 +11,11 @@ void main(void) {
     initSerial();
     initLcd();
 
-    char hello[] = "Hello world!";
-    print(hello);
-    sendString(hello);
+    //char hello[] = "Hello world!";
+    //print(hello);
+    //sendString(hello);
+
+    writeLcd(DATA, 'A');
 
     while (true) {
         //
