@@ -13,3 +13,11 @@ void initPorts(void) {
     ANSELD = 0;
     ANSELE = 0;
 }
+
+#pragma interrupt isr
+
+void isr(void) {
+    //
+}
+
+#pragma code
