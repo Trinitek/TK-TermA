@@ -18,7 +18,7 @@ void initSerial(void) {
     BAUDCONbits.SCKP = 0;       // do not invert data on transmission
     BAUDCONbits.BRG16 = 0;      // use 8-bit generator
     BAUDCONbits.ABDEN = 0;      // disable baud detect
-    SPBRG1 = 51;                // 2400 baud at 8 MHz
+    SPBRG1 = 103;               // 2400 baud at 16 MHz
     SPBRGH1 = 0;
 }
 

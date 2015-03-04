@@ -2,7 +2,7 @@
 #include <xc.h>
 
 void initOscillator(void) {
-    OSCCONbits.IRCF = 0b110;    // 8 MHz
+    OSCCONbits.IRCF = 0b111;    // 16 MHz
 }
 
 void initPorts(void) {
